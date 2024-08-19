@@ -31,7 +31,6 @@ This repository contains a Jupyter Notebook designed for processing and transcri
    Use pip to install the necessary Python libraries:
 
    ```bash
-   pip install numpy scipy matplotlib librosa pandas soundfile
    pip install git+https://github.com/m-bain/whisperx.git
    pip install git+https://github.com/openai/whisper.git
    ```
@@ -42,19 +41,19 @@ This repository contains a Jupyter Notebook designed for processing and transcri
    - Set the `Hardware accelerator` to `GPU`
    - Ensure the `GPU type` is set to `T4` for optimal performance.
 
-4. **Run the Jupyter Notebook:**
+4. **Run the Colab Notebook:**
 
-   Open the notebook file (`WhisperX.ipynb`) in Jupyter Notebook or Google Colab.
+   Open the notebook file (`WhisperX.ipynb`) in Google Colab.
 
 5. **Install Additional Dependencies:**
 
    If you are using Google Colab, run the following command to install additional dependencies:
 
    ```python
-   !pip install -r "/content/drive/MyDrive/NYU LH Audio Transcription/requirements.txt"
+   !pip install -r "requirements.txt" #Add own path to requirements.txt
    ```
 
-6. **Configure Google Drive (Optional):**
+6. **Configure Google Drive:**
 
    If you are using Google Colab, make sure to mount your Google Drive to access and save files:
 
@@ -127,10 +126,4 @@ The notebook may include sections for visualizing the phoneme data or analyzing 
 - **Phoneme CSV:**
   - The phoneme dictionary is saved as a `.csv` file in the designated directory.
 
-## Contributing
 
-If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Contributions are welcome!
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
