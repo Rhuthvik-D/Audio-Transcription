@@ -1,7 +1,7 @@
 
 # WhisperX Audio Transcription
 
-This repository contains a Jupyter Notebook designed for processing and transcribing audio files. The main features of the notebook include handling audio files, converting phoneme dictionaries, and managing transcription data.
+This repository contains a Jupyter Notebook designed for processing and transcribing audio files using the WhisperX library. The notebook includes features for handling audio files, converting phoneme dictionaries, and managing transcription data.
 
 ## Features
 
@@ -9,13 +9,14 @@ This repository contains a Jupyter Notebook designed for processing and transcri
 - **Phoneme Dictionary Conversion:** Converts a phoneme dictionary from `.txt` format to `.csv`.
 - **Directory Management:** Automatically creates directories for storing output files.
 - **Error Handling:** Includes basic error handling to manage missing files or directories.
+- **Integration with WhisperX:** Uses WhisperX for advanced audio transcription.
 
 ## Requirements
 
 - Python 3.x
-- Jupyter Notebook
-- Google Colab (if running in a cloud environment)
-- Libraries: `os`, `csv`, `scipy`, `numpy`, `matplotlib`, `librosa`, `pandas`
+- Jupyter Notebook or Google Colab
+- Google Drive (for cloud storage)
+- Libraries: `os`, `csv`, `scipy`, `numpy`, `matplotlib`, `librosa`, `pandas`, `soundfile`, `whisperx`, `whisper`
 
 ## Setup
 
@@ -30,14 +31,30 @@ This repository contains a Jupyter Notebook designed for processing and transcri
    Use pip to install the necessary Python libraries:
 
    ```bash
-   pip install numpy scipy matplotlib librosa pandas
+   pip install numpy scipy matplotlib librosa pandas soundfile
+   pip install git+https://github.com/m-bain/whisperx.git
+   pip install git+https://github.com/openai/whisper.git
    ```
 
-3. **Run the Jupyter Notebook:**
+3. **Change Runtime to T4 GPU (Google Colab):**
+
+   - Go to `Runtime` > `Change runtime type`
+   - Set the `Hardware accelerator` to `GPU`
+   - Ensure the `GPU type` is set to `T4` for optimal performance.
+
+4. **Run the Jupyter Notebook:**
 
    Open the notebook file (`WhisperX.ipynb`) in Jupyter Notebook or Google Colab.
 
-4. **Configure Google Drive (Optional):**
+5. **Install Additional Dependencies:**
+
+   If you are using Google Colab, run the following command to install additional dependencies:
+
+   ```python
+   !pip install -r "/content/drive/MyDrive/NYU LH Audio Transcription/requirements.txt"
+   ```
+
+6. **Configure Google Drive (Optional):**
 
    If you are using Google Colab, make sure to mount your Google Drive to access and save files:
 
@@ -63,6 +80,9 @@ The notebook processes audio files, primarily `.wav` and `.mat` formats. The mai
 - **File Processing:**
   - The function handles `.mat` files, extracting audio data and saving them in the designated directory.
   - For `.wav` files, it checks if the corresponding `.mat` file exists, processes the audio, and saves the `.wav` file.
+
+- **Transcription with WhisperX:**
+  - The notebook uses the WhisperX library to transcribe audio files, extracting words, phonemes, and their corresponding time offsets and probabilities.
 
 ### 2. **Phoneme Dictionary Conversion**
 
