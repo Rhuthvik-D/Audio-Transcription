@@ -106,14 +106,13 @@ The notebook includes logic to ensure smooth operation, even when files or direc
   - Before processing, the notebook checks whether necessary files exist to prevent runtime errors.
   - If a file is missing, an appropriate message is displayed.
 
-### 4. **Visualization and Analysis**
-
-The notebook may include sections for visualizing the phoneme data or analyzing the audio files. Common tools for this might include `matplotlib` for plotting or `librosa` for audio analysis.
-
 ## Usage
 
 - **Audio File Transcription:**
   - Use the `audio_trans(filepath)` function to process and transcribe audio files located at the specified `filepath`.
+
+- **Phoneme Disctionary.txt Path:**
+   - The phonneme dictionary path has to be changed according to your system.    
 
 - **Phoneme Dictionary Conversion:**
   - The phoneme dictionary is automatically converted from `.txt` to `.csv` format during the transcription process.
