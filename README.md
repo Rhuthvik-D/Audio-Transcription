@@ -117,6 +117,12 @@ The notebook includes logic to ensure smooth operation, even when files or direc
 - **Phoneme Dictionary Conversion:**
   - The phoneme dictionary is automatically converted from `.txt` to `.csv` format during the transcription process.
 
+- **WhisperX Command**
+  - ***Changes in Command***
+    - If `model` wants to be changed, the `command` in the code has an attribute, `--model`. Change it as per needs. The available models in WhipserX are `large-v2`, `medium`, `small`, `tiny`, `base`.
+    - WhisperX offers different output formats, namely `vtt`, `srt`, `txt`, `tsv`, `json`. If all the mentioned output formats are required, `all` can be used for `--output_format`.
+    - To look for different alignment models, visit <a href = "https://huggingface.co/models" target = "_blank"> this site</a> for reference.
+
 ## Output
 
 - **Processed Files:**
